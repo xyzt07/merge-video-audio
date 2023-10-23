@@ -16,8 +16,9 @@ if($out){
     ffmpeg -i $v -i "audio.aac" -c:v copy -c:a copy "$name all.mp4" -y
     echo "output $name all.mp4"
 }
-if($arg='-d'){
-    Remove-Item "audio.aac"
+Remove-Item "audio.aac"
+
+if($args -eq '-d'){
     Remove-Item "$v"
     Remove-Item "$a"
 }
